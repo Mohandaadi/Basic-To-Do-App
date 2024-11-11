@@ -1,0 +1,153 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #c3ecf8, #e2f4ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #4a4e69;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+#task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#task-input, #due-date, #priority, button {
+    padding: 10px;
+    border: 2px solid #d4d4d4;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+#task-input, #due-date, #priority {
+    width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+#task-input:focus, #due-date:focus, #priority:focus {
+    border-color: #4a4e69;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #4a4e69;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #3a3c56;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.filters button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #f3f3f3;
+    color: #4a4e69;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.filters button:hover {
+    background-color: #4a4e69;
+    color: #fff;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: background-color 0.3s;
+}
+
+.task-item:hover {
+    background-color: #f0f4ff;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #9e9e9e;
+}
+
+.task-item .task-text {
+    flex: 1;
+    font-size: 1em;
+    cursor: pointer;
+    color: #4a4e69;
+}
+
+button.delete {
+    background-color: transparent;
+    border: none;
+    color: #ff6b6b;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.2s;
+}
+
+button.delete:hover {
+    color: #e64949;
+}
+
+/* Scrollbar styling */
+#task-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#task-list::-webkit-scrollbar-track {
+    background: #f3f3f3;
+}
+
+#task-list::-webkit-scrollbar-thumb {
+    background-color: #4a4e69;
+    border-radius: 10px;
+}
